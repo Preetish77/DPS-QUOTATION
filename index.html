@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +8,11 @@
 <title>DURGAPARAMESHWARI STONE CRUSHER - QUOTATION</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;600;700;800&family=Poppins:wght=300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-
 * {
   -webkit-print-color-adjust: exact !important;
   print-color-adjust: exact !important;
@@ -40,33 +37,35 @@ margin:auto;
 background:#fdf9f3;
 border:2px solid #bda054;
 box-shadow:0 12px 35px rgba(0,0,0,.15);
-overflow:hidden;
+display: flex;
+flex-direction: column;
+min-height: 100%;
 }
 
 /* TOP STRIP */
-
-.top-strip{
-height:18px;
-background:#082e63;
-position:relative;
+.top-strip-wrapper {
+  display: flex;
+  width: 100%;
+  height: 18px;
+  flex-shrink: 0;
+}
+.top-strip-blue {
+  width: 75%;
+  background: #082e63;
+  height: 100%;
+}
+.top-strip-gold {
+  width: 25%;
+  background: #bda054;
+  height: 100%;
 }
 
-.top-strip::after{
-content:'';
-position:absolute;
-top:0;
-right:0;
-height:100%;
-width:25%;
-background:#bda054;
-}
-
-/* HEADER */
-
+/* HEADER WITH ADDED SPACE */
 .header{
 display:flex;
 align-items:center;
-padding:40px 50px 25px;
+padding:40px 50px 35px; /* Increased bottom padding */
+flex-shrink: 0;
 }
 
 .logo-box{
@@ -88,27 +87,28 @@ flex:1;
 
 .company h1{
 font-family:'Cinzel',serif;
-font-size:48px;
+font-size:46px; /* Slightly adjusted to fit elegantly */
 font-weight:800;
-line-height:1.05;
+line-height:1.3; /* 🔥 Fixed: Increased line-height to add breathing room after the text */
 color:#082e63;
+margin-bottom: 5px;
 }
 
 .company h2{
 font-family:'Cinzel',serif;
-font-size:28px;
+font-size:26px;
 letter-spacing:6px;
 margin-top:6px;
 color:#bda054;
 font-weight:700;
 border-bottom:2px solid #bda054;
-padding-bottom:10px;
+padding-bottom:12px; /* Increased spacing above line */
 display:inline-block;
 width:100%;
 }
 
 .company-details{
-margin-top:14px;
+margin-top:16px; /* Increased spacing below the line */
 display:flex;
 flex-direction:column;
 gap:5px;
@@ -123,15 +123,15 @@ font-weight:600;
 }
 
 /* TITLE */
-
 .title-container{
 text-align:center;
-margin:15px 0 20px;
+margin:10px 0 15px;
+flex-shrink: 0;
 }
 
 .title{
 font-family:'Cinzel',serif;
-font-size:42px;
+font-size:38px;
 font-weight:800;
 letter-spacing:5px;
 color:#082e63;
@@ -152,22 +152,17 @@ font-size:18px;
 color:#bda054;
 }
 
-.title::before{
-left:20px;
-}
-
-.title::after{
-right:20px;
-}
+.title::before{ left:20px; }
+.title::after{ right:20px; }
 
 /* META */
-
 .meta{
 display:flex;
 justify-content:space-between;
-padding:10px 50px 20px;
+padding:5px 50px 15px;
 gap:20px;
 flex-wrap:wrap;
+flex-shrink: 0;
 }
 
 .meta-item{
@@ -202,12 +197,12 @@ background:#fff;
 }
 
 /* TO SECTION */
-
 .to-section{
-padding:0 50px 25px;
+padding:0 50px 15px;
 display:flex;
 flex-direction:column;
-gap:8px;
+gap:6px;
+flex-shrink: 0;
 }
 
 .to-section label{
@@ -219,31 +214,31 @@ letter-spacing:0.5px;
 
 .to-section textarea{
 width:100%;
-min-height:110px;
+min-height:90px; /* Reduced slightly to save page vertical space */
 border:1px solid #082e63;
 border-radius:4px;
-padding:14px;
+padding:12px;
 font-size:14px;
 font-family:'Poppins',sans-serif;
 outline:none;
 resize:vertical;
 background:#fff;
-line-height:1.6;
+line-height:1.5;
 }
 
 /* DESCRIPTION */
-
 .description{
-padding:0 50px 22px;
+padding:0 50px 15px;
 font-size:15px;
 font-weight:500;
-line-height:1.7;
+line-height:1.6;
+flex-shrink: 0;
 }
 
 /* TABLE */
-
 .table-wrapper{
 padding:0 50px;
+flex: 1;
 }
 
 table{
@@ -259,7 +254,7 @@ background:#082e63;
 
 thead th{
 color:#fff;
-padding:12px 8px;
+padding:10px 6px;
 border:1px solid #bda054;
 font-size:13px;
 font-weight:600;
@@ -268,7 +263,7 @@ text-align:center;
 
 tbody td{
 border:1px solid #bda054;
-padding:10px 6px;
+padding:8px 6px; /* Slightly optimized row heights */
 text-align:center;
 font-size:14px;
 font-weight:500;
@@ -285,7 +280,7 @@ background:transparent;
 text-align:center;
 font-size:14px;
 font-family:inherit;
-padding:4px;
+padding:2px;
 outline:none;
 pointer-events:none;
 }
@@ -301,7 +296,6 @@ font-weight:700;
 }
 
 /* ACTION BUTTONS */
-
 .action-cell{
 display:flex;
 justify-content:center;
@@ -310,7 +304,7 @@ gap:6px;
 
 .action-btn{
 border:none;
-padding:5px 10px;
+padding:4px 8px;
 font-size:11px;
 font-weight:700;
 border-radius:3px;
@@ -319,21 +313,16 @@ color:#fff;
 text-transform:uppercase;
 }
 
-.edit-btn{
-background:#2b7a4b;
-}
-
-.delete-btn{
-background:#a62626;
-}
+.edit-btn{ background:#2b7a4b; }
+.delete-btn{ background:#a62626; }
 
 /* BUTTONS */
-
 .buttons{
-padding:20px 50px 10px;
+padding:15px 50px 10px;
 display:flex;
 gap:12px;
 flex-wrap:wrap;
+flex-shrink: 0;
 }
 
 .buttons button{
@@ -348,10 +337,7 @@ cursor:pointer;
 transition:.2s;
 }
 
-.buttons button:hover{
-opacity:.9;
-}
-
+.buttons button:hover{ opacity:.9; }
 .buttons .add-btn{
 background:#bda054;
 color:#082e63;
@@ -359,79 +345,103 @@ border:1px solid #082e63;
 }
 
 /* TERMS */
-
 .bottom-layout{
-padding:25px 50px 35px;
+padding:15px 50px 20px;
+flex-shrink: 0;
 }
 
 .terms-container h3{
 font-size:15px;
 font-weight:700;
 color:#082e63;
-margin-bottom:12px;
+margin-bottom:8px;
 text-decoration:underline;
 text-underline-offset:4px;
 }
 
 .terms-container ol{
 padding-left:18px;
-line-height:1.8;
-font-size:14px;
+line-height:1.6;
+font-size:13px;
 font-weight:500;
 }
 
 /* FOOTER */
-
 .footer-bar{
 background:#082e63;
 border-top:4px solid #bda054;
-padding:16px 50px;
+padding:14px 50px;
 display:grid;
 grid-template-columns:1fr 1fr 1fr;
 color:#fff;
-font-size:15px;
+font-size:14px;
 font-weight:600;
+flex-shrink: 0;
+margin-top: auto; /* Pushes footer seamlessly to the container base */
 }
 
-.footer-left{
-text-align:left;
+.footer-left{ text-align:left; }
+.footer-center{ text-align:center; }
+.footer-right{ text-align:right; }
+.phone-icon{ color:#bda054; margin-right:6px; }
+
+/* PRINT ENGINE OPTIMIZATIONS */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0mm; /* Completely strips default system page tracking */
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body * {
+    overflow: visible !important;
+  }
+
+  /* Force the layout to perfectly balance inside 1 physical sheet height */
+  .container {
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important; 
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background: #fdf9f3 !important;
+  }
+
+  /* Structural paddings tightened for print layout compression */
+  .header { padding: 30px 40px 15px !important; }
+  .logo-box { width: 140px !important; height: 140px !important; }
+  .vertical-divider { height: 115px !important; margin: 0 25px !important; }
+  .company h1 { font-size: 38px !important; }
+  .company h2 { font-size: 22px !important; }
+  .title-container { margin: 5px 0 10px !important; }
+  .title { font-size: 32px !important; }
+  .meta { padding: 5px 40px 10px !important; }
+  .to-section { padding: 0 40px 10px !important; }
+  .to-section textarea { min-height: 75px !important; }
+  .description { padding: 0 40px 10px !important; }
+  .table-wrapper { padding: 0 40px !important; }
+  tbody td { padding: 6px 4px !important; font-size: 13px !important; }
+  .bottom-layout { padding: 10px 40px 15px !important; }
+  .footer-bar { padding: 12px 40px !important; }
+
+  .buttons,
+  .action-header,
+  .action-cell {
+    display: none !important;
+  }
 }
-
-.footer-center{
-text-align:center;
-}
-
-.footer-right{
-text-align:right;
-}
-
-.phone-icon{
-color:#bda054;
-margin-right:6px;
-}
-
-/* PRINT */
-
-@media print{
-
-.buttons,
-.action-header,
-.action-cell{
-display:none !important;
-}
-
-body{
-background:#fff;
-padding:0;
-}
-
-.container{
-border:none;
-box-shadow:none;
-}
-
-}
-
 </style>
 </head>
 
@@ -439,238 +449,114 @@ box-shadow:none;
 
 <div class="container" id="quotation">
 
-<div class="top-strip"></div>
-
-<!-- HEADER -->
+<div class="top-strip-wrapper">
+  <div class="top-strip-blue"></div>
+  <div class="top-strip-gold"></div>
+</div>
 
 <div class="header">
-
 <div class="logo-box">
-
 <svg viewBox="0 0 200 200" width="100%" height="100%">
-
-<polygon points="100,6 190,52 190,148 100,194 10,148 10,52"
-fill="none"
-stroke="#082e63"
-stroke-width="4.5"/>
-
-<polygon points="100,13 181,55 181,145 100,187 19,145 19,55"
-fill="none"
-stroke="#bda054"
-stroke-width="2.5"/>
-
+<polygon points="100,6 190,52 190,148 100,194 10,148 10,52" fill="none" stroke="#082e63" stroke-width="4.5"/>
+<polygon points="100,13 181,55 181,145 100,187 19,145 19,55" fill="none" stroke="#bda054" stroke-width="2.5"/>
 <g fill="#082e63">
 <polygon points="25,124 64,74 100,124"/>
 <polygon points="50,124 102,46 150,124"/>
 <polygon points="110,124 146,80 178,124"/>
 </g>
-
-<line x1="15" y1="124" x2="185" y2="124"
-stroke="#082e63"
-stroke-width="3"/>
-
-<text x="100"
-y="162"
-font-family="'Poppins', sans-serif"
-font-weight="900"
-font-size="44"
-fill="#082e63"
-text-anchor="middle">DPS</text>
-
-<text x="100"
-y="180"
-font-family="'Poppins', sans-serif"
-font-weight="700"
-font-size="10.5"
-fill="#bda054"
-text-anchor="middle"
-letter-spacing="1.2">STONE CRUSHER</text>
-
+<line x1="15" y1="124" x2="185" y2="124" stroke="#082e63" stroke-width="3"/>
+<text x="100" y="162" font-family="'Poppins', sans-serif" font-weight="900" font-size="44" fill="#082e63" text-anchor="middle">DPS</text>
+<text x="100" y="180" font-family="'Poppins', sans-serif" font-weight="700" font-size="10.5" fill="#bda054" text-anchor="middle" letter-spacing="1.2">STONE CRUSHER</text>
 </svg>
-
 </div>
 
 <div class="vertical-divider"></div>
 
 <div class="company">
-
 <h1>DURGAPARAMESHWARI</h1>
-
 <h2>STONE CRUSHER</h2>
-
 <div class="company-details">
-
-<span class="address">
-📍 Tharikatte - Belve, Udupi Dist Taluk & Dist
-</span>
-
-<span>
-<strong>GSTIN:</strong> 29ADIFS3575K1ZD
-&nbsp;&nbsp;|&nbsp;&nbsp;
-<strong>Email:</strong> udpsc33dpscrusher@gmail.com
-</span>
-
+<span class="address">📍 Tharikatte - Belve, Udupi Dist Taluk & Dist</span>
+<span><strong>GSTIN:</strong> 29ADIFS3575K1ZD &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Email:</strong> udpsc33dpscrusher@gmail.com</span>
 </div>
-
 </div>
-
 </div>
-
-<!-- TITLE -->
 
 <div class="title-container">
 <div class="title">QUOTATION</div>
 </div>
 
-<!-- META -->
-
 <div class="meta">
-
 <div class="meta-item">
 <label>Quotation No.</label>
-
-<input
-type="number"
-placeholder="Enter Quotation No."
-min="1">
+<input type="number" placeholder="Enter Quotation No." min="1">
 </div>
-
 <div class="meta-item">
 <label>Date</label>
-
 <input type="date" id="quotationDate">
 </div>
-
 </div>
-
-<!-- TO -->
 
 <div class="to-section">
-
 <label>TO</label>
-
 <textarea placeholder="Enter Customer / Company Name, Address, Contact Details..."></textarea>
-
 </div>
-
-<!-- DESCRIPTION -->
 
 <div class="description">
-
 We are pleased to submit our quotation for the supply of the following materials as per the rates given below:
-
 </div>
-
-<!-- TABLE -->
 
 <div class="table-wrapper">
-
 <table id="table">
-
 <thead>
-
 <tr>
-
 <th style="width:5%;">Sl. No.</th>
-
 <th style="width:20%;">Material</th>
-
 <th style="width:12%;">Base Rate (₹)</th>
-
 <th style="width:13%;">Royalty (₹)</th>
-
 <th style="width:13%;">Transport (₹)</th>
-
 <th style="width:12%;">Subtotal (₹)</th>
-
 <th style="width:10%;">GST 5% (₹)</th>
-
 <th style="width:13%;">Final Total (₹)</th>
-
 <th class="action-header" style="width:12%;">Actions</th>
-
 </tr>
-
 </thead>
-
 <tbody id="tbody"></tbody>
-
 </table>
-
 </div>
-
-<!-- BUTTONS -->
 
 <div class="buttons">
-
-<button class="add-btn" onclick="addRow()">
-+ Add Material Item Row
-</button>
-
-<button onclick="window.print()">
-Print Document
-</button>
-
-<button onclick="downloadPDF()">
-Download PDF Format
-</button>
-
+<button class="add-btn" onclick="addRow()">+ Add Material Item Row</button>
+<button onclick="window.print()">Print Document</button>
+<button onclick="downloadPDF()">Download PDF Format</button>
 </div>
-
-<!-- TERMS -->
 
 <div class="bottom-layout">
-
 <div class="terms-container">
-
 <h3>TERMS & CONDITIONS:</h3>
-
 <ol>
-
 <li>GST @ 5% extra on the subtotal amount.</li>
-
 <li>Payment Terms: As mutually agreed.</li>
-
 <li>Material will be supplied subject to availability.</li>
-
 <li>This quotation is valid for 7 days from the date of quotation.</li>
-
 </ol>
-
 </div>
-
 </div>
-
-<!-- FOOTER -->
 
 <div class="footer-bar">
-
-<div class="footer-left">
-<span class="phone-icon">📞</span> +91 9449207977
-</div>
-
-<div class="footer-center">
-<span class="phone-icon">📞</span> +91 82962 18138
-</div>
-
-<div class="footer-right">
-<span class="phone-icon">📞</span> +91 9980798377
-</div>
-
+<div class="footer-left"><span class="phone-icon">📞</span> +91 9449207977</div>
+<div class="footer-center"><span class="phone-icon">📞</span> +91 82962 18138</div>
+<div class="footer-right"><span class="phone-icon">📞</span> +91 9980798377</div>
 </div>
 
 </div>
 
 <script>
-
 /* AUTO DATE */
-
 document.getElementById('quotationDate').valueAsDate = new Date();
 
 /* INITIAL DATA */
-
 const initialDataset = [
-
 ["20 mm", 18000, 3000, 28000],
 ["10 mm", 15600, 3000, 28000],
 ["6 mm", 16200, 3000, 28000],
@@ -678,264 +564,120 @@ const initialDataset = [
 ["Dust", 12000, 3000, 28000],
 ["Wet Mix", 15000, 3000, 28000],
 ["30 mm", 15600, 3000, 28000]
-
 ];
 
 const tableBody = document.getElementById('tbody');
 
 /* BUILD ROW */
-
-function buildRowItem(
-index,
-matName,
-baseValue,
-royaltyValue,
-transportValue
-){
-
+function buildRowItem(index, matName, baseValue, royaltyValue, transportValue){
 const rowEl = document.createElement('tr');
-
 rowEl.innerHTML = `
-
 <td class="index-cell">${index}</td>
-
-<td>
-<input type="text"
-class="material-name"
-value="${matName}">
-</td>
-
-<td>
-<input type="number"
-class="base-rate-input"
-value="${baseValue}">
-</td>
-
-<td>
-<input type="number"
-class="royalty-input"
-value="${royaltyValue}">
-</td>
-
-<td>
-<input type="number"
-class="transport-input"
-value="${transportValue}">
-</td>
-
+<td><input type="text" class="material-name" value="${matName}"></td>
+<td><input type="number" class="base-rate-input" value="${baseValue}"></td>
+<td><input type="number" class="royalty-input" value="${royaltyValue}"></td>
+<td><input type="number" class="transport-input" value="${transportValue}"></td>
 <td class="subtotal-val">0</td>
-
 <td class="gst-val">0</td>
-
 <td class="final-total-col">0</td>
-
 <td class="action-cell">
-
-<button class="action-btn edit-btn"
-onclick="toggleRowEdit(this)">
-Edit
-</button>
-
-<button class="action-btn delete-btn"
-onclick="this.closest('tr').remove(); reindexRows();">
-Delete
-</button>
-
+<button class="action-btn edit-btn" onclick="toggleRowEdit(this)">Edit</button>
+<button class="action-btn delete-btn" onclick="this.closest('tr').remove(); reindexRows();">Delete</button>
 </td>
 `;
 
 tableBody.appendChild(rowEl);
-
 rowEl.querySelectorAll('input').forEach(inputField => {
-
-inputField.addEventListener('input', () => {
-runRowCalculations(rowEl);
+inputField.addEventListener('input', () => { runRowCalculations(rowEl); });
 });
-
-});
-
 runRowCalculations(rowEl);
-
 }
 
 /* EDIT TOGGLE */
-
 function toggleRowEdit(button){
-
 const row = button.closest('tr');
-
 const isEditing = row.classList.toggle('editing');
-
 if(isEditing){
-
 button.innerText = "Lock";
 button.style.background = "#b88120";
-
 }else{
-
 button.innerText = "Edit";
 button.style.background = "#2b7a4b";
-
 }
-
 }
 
 /* CALCULATIONS */
-
 function runRowCalculations(row){
+let basePrice = parseFloat(row.querySelector('.base-rate-input').value) || 0;
+let royaltyPrice = parseFloat(row.querySelector('.royalty-input').value) || 0;
+let transportPrice = parseFloat(row.querySelector('.transport-input').value) || 0;
+let subtotalAmount = basePrice + royaltyPrice + transportPrice;
+let gstAmount = Math.round(subtotalAmount * 0.05);
+let absoluteTotal = subtotalAmount + gstAmount;
 
-let basePrice =
-parseFloat(
-row.querySelector('.base-rate-input').value
-) || 0;
-
-let royaltyPrice =
-parseFloat(
-row.querySelector('.royalty-input').value
-) || 0;
-
-let transportPrice =
-parseFloat(
-row.querySelector('.transport-input').value
-) || 0;
-
-let subtotalAmount =
-basePrice + royaltyPrice + transportPrice;
-
-let gstAmount =
-Math.round(subtotalAmount * 0.05);
-
-let absoluteTotal =
-subtotalAmount + gstAmount;
-
-row.querySelector('.subtotal-val').innerText =
-subtotalAmount.toLocaleString('en-IN');
-
-row.querySelector('.gst-val').innerText =
-gstAmount.toLocaleString('en-IN');
-
-row.querySelector('.final-total-col').innerText =
-absoluteTotal.toLocaleString('en-IN');
-
+row.querySelector('.subtotal-val').innerText = subtotalAmount.toLocaleString('en-IN');
+row.querySelector('.gst-val').innerText = gstAmount.toLocaleString('en-IN');
+row.querySelector('.final-total-col').innerText = absoluteTotal.toLocaleString('en-IN');
 }
 
 /* REINDEX */
-
 function reindexRows(){
-
-document.querySelectorAll('#tbody tr')
-.forEach((row, index) => {
-
-row.querySelector('.index-cell').innerText =
-index + 1;
-
+document.querySelectorAll('#tbody tr').forEach((row, index) => {
+row.querySelector('.index-cell').innerText = index + 1;
 });
-
 }
 
 /* ADD ROW */
-
 function addRow(){
-
-const nextIdx =
-tableBody.children.length + 1;
-
-buildRowItem(
-nextIdx,
-"New Specification Sizes",
-0,
-3000,
-28000
-);
-
+const nextIdx = tableBody.children.length + 1;
+buildRowItem(nextIdx, "New Specification Sizes", 0, 3000, 28000);
 const lastRow = tableBody.lastElementChild;
-
-const editBtn =
-lastRow.querySelector('.edit-btn');
-
+const editBtn = lastRow.querySelector('.edit-btn');
 toggleRowEdit(editBtn);
-
 }
 
-/* PDF */
-
+/* PDF GENERATOR (FORCED TO 1 PERFECT PAGE HEIGHT) */
 function downloadPDF(){
+const element = document.getElementById('quotation');
+const buttons = document.querySelector('.buttons');
+const actionCells = document.querySelectorAll('.action-header, .action-cell');
 
-const targetElement =
-document.getElementById('quotation');
+buttons.style.display = 'none';
+actionCells.forEach(el => el.style.setProperty('display','none','important'));
 
-const controlButtons =
-document.querySelector('.buttons');
+// Apply dynamic tracking overrides to ensure the html2pdf canvas mimics exact 1-page bounds
+const originalStyle = element.style.cssText;
+element.style.setProperty('height', '1060px', 'important');
+element.style.setProperty('max-height', '1060px', 'important');
 
-const actionHeaders =
-document.querySelectorAll('.action-header, .action-cell');
-
-// hide UI
-controlButtons.style.display = 'none';
-
-actionHeaders.forEach(item => {
-item.style.setProperty('display','none','important');
-});
-
-window.scrollTo(0, 0);
-
-const configuration = {
-
-margin: 0.2,
-
+setTimeout(() => {
+const opt = {
+margin: 0,
 filename: 'DPS_Stone_Crusher_Quotation.pdf',
-
-image: {
-type: 'png',   // 🔥 CHANGED (was jpeg → prevents color washout)
-quality: 1
-},
-
+image: { type: 'jpeg', quality: 0.98 },
 html2canvas: {
-
-scale: 4, // 🔥 higher resolution = better color accuracy
+scale: 2,
 useCORS: true,
 backgroundColor: '#fdf9f3',
-logging: false,
 letterRendering: true,
-scrollX: 0,
 scrollY: 0,
-allowTaint: true
-
+scrollX: 0
 },
-
-jsPDF: {
-unit: 'in',
-format: 'a4',
-orientation: 'portrait'
-}
-
+jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
 };
 
-html2pdf()
-.set(configuration)
-.from(targetElement)
-.save()
-.then(() => {
-
-// restore UI
-controlButtons.style.display = 'flex';
-
-actionHeaders.forEach(item => {
-item.style.removeProperty('display');
+html2pdf().set(opt).from(element).save().then(() => {
+buttons.style.display = 'flex';
+actionCells.forEach(el => el.style.removeProperty('display'));
+element.style.cssText = originalStyle;
 });
-
-});
-
+}, 300);
 }
 
 /* INITIAL LOAD */
-
 initialDataset.forEach((rowMeta, i) => {
-
 buildRowItem(i + 1, ...rowMeta);
-
 });
-
 </script>
 
 </body>
