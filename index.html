@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +15,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
+
+* {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
 
 *{
 margin:0;
@@ -861,35 +868,39 @@ const controlButtons =
 document.querySelector('.buttons');
 
 const actionHeaders =
-document.querySelectorAll(
-'.action-header, .action-cell'
-);
+document.querySelectorAll('.action-header, .action-cell');
 
+// hide UI
 controlButtons.style.display = 'none';
 
 actionHeaders.forEach(item => {
-item.style.setProperty(
-'display',
-'none',
-'important'
-);
+item.style.setProperty('display','none','important');
 });
+
+window.scrollTo(0, 0);
 
 const configuration = {
 
 margin: 0.2,
 
-filename:
-'DPS_Stone_Crusher_Quotation.pdf',
+filename: 'DPS_Stone_Crusher_Quotation.pdf',
 
 image: {
-type: 'jpeg',
-quality: 0.98
+type: 'png',   // 🔥 CHANGED (was jpeg → prevents color washout)
+quality: 1
 },
 
 html2canvas: {
-scale: 2.5,
-useCORS: true
+
+scale: 4, // 🔥 higher resolution = better color accuracy
+useCORS: true,
+backgroundColor: '#fdf9f3',
+logging: false,
+letterRendering: true,
+scrollX: 0,
+scrollY: 0,
+allowTaint: true
+
 },
 
 jsPDF: {
@@ -901,11 +912,12 @@ orientation: 'portrait'
 };
 
 html2pdf()
-.from(targetElement)
 .set(configuration)
+.from(targetElement)
 .save()
 .then(() => {
 
+// restore UI
 controlButtons.style.display = 'flex';
 
 actionHeaders.forEach(item => {
